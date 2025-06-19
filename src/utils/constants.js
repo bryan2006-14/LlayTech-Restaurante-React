@@ -1,4 +1,4 @@
-export const BASE_API = 'https://llaytech-restaurante.onrender.com';
+export const BASE_API = 'https://llaytech-restaurante.onrender.com/api';
 export const TOKEN = 'token';
 
 export const ORDER_STATUS = {
