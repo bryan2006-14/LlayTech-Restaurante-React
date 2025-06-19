@@ -1,0 +1,28 @@
+.list-product-cart {
+
+    &__product {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        border-bottom: 1px solid rgba(34,36,38,.15);
+        padding: 10px 0;
+
+        > div {
+            width: 200px;
+            display: flex;
+            align-items: center;
+
+            .ui.image {
+                margin-right: 20px !important;
+            }
+        }
+
+        .icon {
+            color: #333;
+        }
+    }
+
+    .ui.button {
+        margin-top: 20px;
+    }
+}

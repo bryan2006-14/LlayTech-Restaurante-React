@@ -1,0 +1,29 @@
+.add-edit-product-form {
+    
+    &__active {
+        display: flex;
+        align-items: center;
+        margin-top: 20px;
+        margin-bottom: 20px;
+
+        .ui.checkbox {
+            margin-right: 20px;
+        }
+    }
+
+    .ui.image {
+        margin-top: 10px;
+        // width: 300px;
+    }
+
+    .ui.button.primary {
+        margin-top: 50px;
+    }
+}
+
+.ui.pointing.above.prompt.label {
+    white-space: normal;
+    background: #fff!important;
+    border: 1px solid #e0b4b4!important;
+    color: #9f3a38!important;
+}

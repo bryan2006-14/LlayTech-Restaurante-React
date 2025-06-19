@@ -1,0 +1,20 @@
+.list-categories-client {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+
+    &__category {
+        display: flex;
+        align-items: center;
+        width: 100%;
+        // border: 1px solid rgba(34,36,38,.15);
+        margin: 10px 0;
+
+        border-radius: 0.28571429rem;
+        box-shadow: 0 1px 3px 0 #d4d4d5, 0 0 0 1px #d4d4d5;
+    }
+
+    .ui.image {
+        margin-right: 10px;
+    }
+}
