@@ -1,6 +1,8 @@
 import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import { map, size, forEach } from 'lodash';
+// importa navigate
+import { useNavigate } from 'react-router-dom';
 
 import { Button, Loader } from 'semantic-ui-react';
 
@@ -19,6 +21,7 @@ export function OrdersHistory() {
     const { getTableByNumber } = useTable();
     const { tableNumber } = useParams();
     const { createPayment, getPaymentByTable } = usePayment();
+    const navigate = useNavigate();
 
     useEffect(() => {
         
@@ -103,14 +106,15 @@ export function OrdersHistory() {
                 </>
             )}
 
-            <ModalConfirm
-                title="Pagar con tarjeta o efectivo"
-                show={showTypePayment}
-                onCloseText="Tarjeta"
-                onClose={() => onCreatePayment('CARD')}
-                onConfirmText="Efectivo"
-                onConfirm={() => onCreatePayment('CASH')}
-            />
+<ModalConfirm
+    title="Pagar con Yape o efectivo"
+    show={showTypePayment}
+    onCloseText="Yape"
+    onClose={() => navigate(`/client/${tableNumber}/yape`)} // 🔁 redirige a Yape
+    onConfirmText="Efectivo"
+    onConfirm={() => onCreatePayment('CASH')}
+/>
+
         </div>
     )
 }

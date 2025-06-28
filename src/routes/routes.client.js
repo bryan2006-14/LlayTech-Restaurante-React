@@ -4,7 +4,9 @@ import {
     Categories,
     Products,
     Cart,
+    YapePaymentInfo,
     OrdersHistory
+    
 } from '../pages';
 
 const routesClient = [
@@ -33,6 +35,12 @@ const routesClient = [
         layout: ClientLayout,
         component: Products,
     },
+    {
+    path: '/client/:tableNumber/yape',
+    layout: ClientLayout,
+    component: YapePaymentInfo,
+},
+
 ];
 
 export default routesClient;

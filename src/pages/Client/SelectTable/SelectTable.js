@@ -41,7 +41,7 @@ export function SelectTable(props) {
     return (
         <div className='select-table'>
             <div className='select-table__content'>
-                <h1>Bienvenido a iCard</h1>
+                <h1>Bienvenido al Rinconcito Vallejano</h1>
                 <h2>Introduce tu número de mesa</h2>
 
                 <Form onSubmit={onSubmit}>

@@ -79,7 +79,7 @@ export function TableDetailsAdmin() {
                     confirmButtonColor: '#21ba45',
                     cancelButtonColor: '#db2828',
                     confirmButtonText: 'Efectivo',
-                    cancelButtonText: 'Tarjeta'
+                    cancelButtonText: 'Yape'
 
                 }).then(async (result) => {
 

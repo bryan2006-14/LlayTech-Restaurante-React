@@ -1,18 +1,126 @@
 .client-layout-bg {
-    background-color: #d9d9d9;
-    min-height: 100vh;
-    min-width: 100vw;
-    padding: 1em 0;
+  background: linear-gradient(135deg, #fff1dc, #ffd8a8); // degradado más cálido
+  min-height: 100vh;
+  padding: 2rem 1rem;
 }
 
 .client-layout {
-    background-color: #fff;
-    padding: 10px;
+  background: #ffffff;
+  border-radius: 24px;
+  box-shadow: 0 14px 30px rgba(255, 123, 0, 0.15);
+  padding: 2rem 2.5rem;
+  max-width: 1200px;
+  margin: 0 auto;
+  position: relative;
+  transition: all 0.3s ease;
 
-    &__header {
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-        margin-bottom: 20px;
+  &:hover {
+    box-shadow: 0 16px 40px rgba(255, 123, 0, 0.2);
+    transform: scale(1.01);
+  }
+}
+
+.client-layout__header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  border-bottom: 2px solid #ffddb0;
+  padding-bottom: 1rem;
+  margin-bottom: 2rem;
+
+  .logo h1 {
+    font-family: 'Poppins', sans-serif;
+    color: #ff7b00;
+    font-size: 2rem;
+    margin: 0;
+    letter-spacing: 1px;
+    text-shadow: 1px 1px 2px rgba(255, 123, 0, 0.1);
+  }
+
+  .table-number {
+    font-weight: 600;
+    color: #e85d04;
+    font-size: 1.2rem;
+    background: #fff4e6;
+    padding: 6px 14px;
+    border-radius: 12px;
+    box-shadow: inset 0 0 6px rgba(255, 123, 0, 0.1);
+  }
+
+  .nav-buttons {
+    display: flex;
+    gap: 0.75rem;
+    margin-top: 1rem;
+
+    button {
+      background: linear-gradient(to right, #ffa94d, #ff7b00);
+      color: white;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 10px;
+      font-weight: 600;
+      font-size: 0.95rem;
+      cursor: pointer;
+      box-shadow: 0 4px 12px rgba(255, 123, 0, 0.25);
+      transition: all 0.3s ease;
+
+      &:hover {
+        background: linear-gradient(to right, #ff922b, #e06b00);
+        transform: translateY(-3px) scale(1.02);
+        box-shadow: 0 6px 16px rgba(255, 123, 0, 0.35);
+      }
+
+      &:active {
+        transform: scale(0.97);
+      }
     }
+  }
+}
+
+.client-layout__content {
+  animation: fadeIn 0.5s ease-in-out;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+// 📱 Responsive design
+@media (max-width: 768px) {
+  .client-layout {
+    padding: 1.5rem;
+  }
+
+  .client-layout__header {
+    flex-direction: column;
+    align-items: flex-start;
+
+    .logo h1 {
+      font-size: 1.6rem;
+    }
+
+    .table-number {
+      font-size: 1rem;
+      margin-top: 8px;
+    }
+
+    .nav-buttons {
+      width: 100%;
+      flex-wrap: wrap;
+      margin-top: 1rem;
+
+      button {
+        width: 100%;
+        padding: 12px;
+      }
+    }
+  }
 }
