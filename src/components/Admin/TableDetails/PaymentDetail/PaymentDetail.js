@@ -6,9 +6,7 @@ import { Button, Icon, Table } from 'semantic-ui-react';
 import './PaymentDetail.scss';
 import { usePayment, useOrder } from '../../../../hooks';
 
-
 export function PaymentDetail(props) {
-
     const {
         payment,
         orders,
@@ -20,14 +18,12 @@ export function PaymentDetail(props) {
     const { closeOrder } = useOrder();
 
     const getIconPayment = (key) => {
-
         if (key === 'CARD') return "credit card alternative";
         if (key === 'CASH') return "money bill alternate";
         return null;
     }
 
     const onCloseTable = async () => {
-
         Swal.fire({
             title: '¿Cerrar mesa para nuevos clientes?',
             icon: 'question',
@@ -36,17 +32,20 @@ export function PaymentDetail(props) {
             cancelButtonColor: '#db2828',
             confirmButtonText: 'Sí, cerrar',
             cancelButtonText: 'No, cancelar'
-
         }).then(async (result) => {
+            if (result.isConfirmed) {
+                await closePayment(payment.id);
 
-            if (result.isConfirmed) await closePayment(payment.id);
+                for await (const order of orders) {
+                    await closeOrder(order.id);
+                }
 
-            for await (const order of orders) {
-                await closeOrder(order.id);
+                onReloadOrders();
+                openCloseModal();
+
+                // 🔄 Recargar la página después de cerrar la mesa y las órdenes
+                window.location.reload();
             }
-
-            onReloadOrders();
-            openCloseModal();
         });
     }
 
@@ -75,5 +74,5 @@ export function PaymentDetail(props) {
                 Marcar como pagado y cerrar mesa
             </Button>
         </div>
-    )
+    );
 }

@@ -31,7 +31,7 @@ export function OrderHistoryItem(props) {
 
             {order.status === ORDER_STATUS.PENDING ? (
                 <span style={{ color: 'orange'}}>En marcha</span>
-            ) : <span style={{ color: 'green'}}>Entregado</span>}
+            ) : <span style={{ color: 'green'}}>Recoger</span>}
         </div>
     )
 }
